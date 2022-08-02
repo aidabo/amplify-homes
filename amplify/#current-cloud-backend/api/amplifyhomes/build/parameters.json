@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "amplifyhomes",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-amplifyhomes-feature-132709-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/2edd6d2b13e3585ba7c459ef491f4caba5957c18"
+}

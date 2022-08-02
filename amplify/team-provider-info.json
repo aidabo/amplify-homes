@@ -22,5 +22,29 @@
         }
       }
     }
+  },
+  "feature": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyhomes-feature-132709-authRole",
+      "UnauthRoleArn": "arn:aws:iam::237245724633:role/amplify-amplifyhomes-feature-132709-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::237245724633:role/amplify-amplifyhomes-feature-132709-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-amplifyhomes-feature-132709-deployment",
+      "UnauthRoleName": "amplify-amplifyhomes-feature-132709-unauthRole",
+      "StackName": "amplify-amplifyhomes-feature-132709",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:237245724633:stack/amplify-amplifyhomes-feature-132709/6feccbc0-121b-11ed-8f89-0a6fb80c353a",
+      "AmplifyAppId": "d5dhj8ntfcp48"
+    },
+    "categories": {
+      "auth": {
+        "amplifyhomes": {}
+      },
+      "storage": {
+        "amplifyhomes8cdd0cb3": {
+          "bucketName": "ai-amplify-app-test",
+          "region": "ap-southeast-1"
+        }
+      }
+    }
   }
 }
