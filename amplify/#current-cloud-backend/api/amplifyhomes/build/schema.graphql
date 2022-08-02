@@ -1,5 +1,5 @@
 
-type Home {
+type Home @aws_iam @aws_api_key {
   id: ID!
   address: String
   image_url: String
@@ -74,6 +74,65 @@ input ModelIDInput {
   size: ModelSizeInput
 }
 
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
 enum ModelAttributeTypes {
   binary
   binarySet
@@ -102,7 +161,7 @@ enum ModelSortDirection {
   DESC
 }
 
-type ModelHomeConnection {
+type ModelHomeConnection @aws_api_key @aws_iam {
   items: [Home]!
   nextToken: String
   startedAt: AWSTimestamp
@@ -119,9 +178,9 @@ input ModelHomeFilterInput {
 }
 
 type Query {
-  getHome(id: ID!): Home
-  listHomes(filter: ModelHomeFilterInput, limit: Int, nextToken: String): ModelHomeConnection
-  syncHomes(filter: ModelHomeFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelHomeConnection
+  getHome(id: ID!): Home @aws_api_key @aws_iam
+  listHomes(filter: ModelHomeFilterInput, limit: Int, nextToken: String): ModelHomeConnection @aws_api_key @aws_iam
+  syncHomes(filter: ModelHomeFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelHomeConnection @aws_api_key @aws_iam
 }
 
 input ModelHomeConditionInput {
@@ -155,14 +214,23 @@ input DeleteHomeInput {
 }
 
 type Mutation {
-  createHome(input: CreateHomeInput!, condition: ModelHomeConditionInput): Home
-  updateHome(input: UpdateHomeInput!, condition: ModelHomeConditionInput): Home
-  deleteHome(input: DeleteHomeInput!, condition: ModelHomeConditionInput): Home
+  createHome(input: CreateHomeInput!, condition: ModelHomeConditionInput): Home @aws_api_key @aws_iam
+  updateHome(input: UpdateHomeInput!, condition: ModelHomeConditionInput): Home @aws_api_key @aws_iam
+  deleteHome(input: DeleteHomeInput!, condition: ModelHomeConditionInput): Home @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionHomeFilterInput {
+  id: ModelSubscriptionIDInput
+  address: ModelSubscriptionStringInput
+  image_url: ModelSubscriptionStringInput
+  price: ModelSubscriptionIntInput
+  and: [ModelSubscriptionHomeFilterInput]
+  or: [ModelSubscriptionHomeFilterInput]
 }
 
 type Subscription {
-  onCreateHome: Home @aws_subscribe(mutations: ["createHome"])
-  onUpdateHome: Home @aws_subscribe(mutations: ["updateHome"])
-  onDeleteHome: Home @aws_subscribe(mutations: ["deleteHome"])
+  onCreateHome(filter: ModelSubscriptionHomeFilterInput): Home @aws_subscribe(mutations: ["createHome"]) @aws_api_key @aws_iam
+  onUpdateHome(filter: ModelSubscriptionHomeFilterInput): Home @aws_subscribe(mutations: ["updateHome"]) @aws_api_key @aws_iam
+  onDeleteHome(filter: ModelSubscriptionHomeFilterInput): Home @aws_subscribe(mutations: ["deleteHome"]) @aws_api_key @aws_iam
 }
 

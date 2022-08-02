@@ -6,10 +6,7 @@
 
 /* eslint-disable */
 import React from "react";
-import {
-  getOverrideProps,
-  useNavigateAction,
-} from "@aws-amplify/ui-react/internal";
+import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import {
   Flex,
   Icon,
@@ -20,7 +17,6 @@ import {
 } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
-  const starOneOnClick = useNavigateAction({ type: "url", url: "" });
   return (
     <Flex
       gap="20px"
@@ -59,9 +55,6 @@ export default function NavBar(props) {
           ]}
           shrink="0"
           position="relative"
-          onClick={() => {
-            starOneOnClick();
-          }}
           {...getOverrideProps(overrides, "Star 1")}
         ></Icon>
         <Text
@@ -232,7 +225,6 @@ export default function NavBar(props) {
           position="relative"
           borderRadius="160px"
           padding="0px 0px 0px 0px"
-          src="https://cdn-common.skima.jp/item/175/303/175303/showcase-7f56955e2b18b6157d4fb16338244b7f-20190518174326.jpeg"
           {...getOverrideProps(overrides, "image")}
         ></Image>
       </Flex>

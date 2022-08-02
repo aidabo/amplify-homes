@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function StandardCard(props) {
-  const { home, getHome, overrides, ...rest } = props;
+  const { home, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -30,7 +30,6 @@ export default function StandardCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         src={home?.image_url}
-        onClick={getHome}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex

@@ -8,10 +8,8 @@ import React from "react";
 import { Home } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
-import { SyntheticEvent } from "react";
 export declare type StandardCardProps = React.PropsWithChildren<Partial<FlexProps> & {
     home?: Home;
-    getHome?: (event: SyntheticEvent) => void;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

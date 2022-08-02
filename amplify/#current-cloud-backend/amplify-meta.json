@@ -36,12 +36,11 @@
         "GraphQLAPIKeyOutput": "da2-kvd45u57f5efrnup5c62etzm5u"
       },
       "dependsOn": [],
+      "lastPushTimeStamp": "2022-08-02T05:00:09.888Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyhomes-feature-132709-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiamplifyhomes"
-      },
-      "lastPushTimeStamp": "2022-08-02T04:35:37.892Z",
-      "lastPushDirHash": "q67UY0Tbcj1avl/VSBBfUYAxk1Q="
+      }
     }
   },
   "auth": {
@@ -68,11 +67,6 @@
           "PHONE_NUMBER"
         ]
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyhomes-feature-132709-deployment/amplify-cfn-templates/auth/amplifyhomes-cloudformation-template.json",
-        "logicalId": "authamplifyhomes"
-      },
-      "lastPushTimeStamp": "2022-08-02T04:35:37.892Z",
       "output": {
         "CreatedSNSRole": "arn:aws:iam::237245724633:role/snse166fb0d132709-feature",
         "UserPoolId": "ap-southeast-1_iNfmTntto",
@@ -83,20 +77,29 @@
         "IdentityPoolName": "testAuthIdentityPool__feature",
         "UserPoolName": "amplifyhomes"
       },
-      "lastPushDirHash": "Jc5UnVWmDY32pU9S/THflzw2Ojo="
+      "lastPushTimeStamp": "2022-08-02T05:00:09.951Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyhomes-feature-132709-deployment/amplify-cfn-templates/auth/amplifyhomes-cloudformation-template.json",
+        "logicalId": "authamplifyhomes"
+      },
+      "lastPushDirHash": "Hea6nTmlyyxXSjwc0/cr0xumE9o="
     }
   },
   "storage": {
-    "amplifyhomes8cdd0cb3": {
+    "s3aiamplifyhomesstorageb065f0ea": {
       "service": "S3",
-      "serviceType": "imported",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
+      "lastPushTimeStamp": "2022-08-02T05:00:09.951Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyhomes-feature-132709-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3aiamplifyhomesstorageb065f0ea"
+      },
       "output": {
-        "BucketName": "ai-amplify-app-test",
+        "BucketName": "ai-amplifyhomes-storage-b065f0ea132709-feature",
         "Region": "ap-southeast-1"
       },
-      "lastPushTimeStamp": "2022-08-02T04:35:37.906Z"
+      "lastPushDirHash": "JqcSug+OrNyrf71Do+0XVk1S1DA="
     }
   }
 }

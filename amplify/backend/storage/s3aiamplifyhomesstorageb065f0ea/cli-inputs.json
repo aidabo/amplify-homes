@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3aiamplifyhomesstorageb065f0ea",
+  "bucketName": "ai-amplifyhomes-storage-b065f0ea",
+  "policyUUID": "62299adf",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

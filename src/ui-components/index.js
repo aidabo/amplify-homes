@@ -4,8 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as StandardCardCollection } from "./StandardCardCollection";
-export { default as ReviewCard } from "./ReviewCard";
-export { default as StandardCard } from "./StandardCard";
 export { default as NavBar } from "./NavBar";
+export { default as StandardCard } from "./StandardCard";
+export { default as StandardCardCollection } from "./StandardCardCollection";
 export { default as studioTheme } from "./studioTheme";

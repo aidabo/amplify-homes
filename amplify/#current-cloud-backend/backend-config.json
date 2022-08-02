@@ -49,9 +49,8 @@
     }
   },
   "storage": {
-    "amplifyhomes8cdd0cb3": {
+    "s3aiamplifyhomesstorageb065f0ea": {
       "service": "S3",
-      "serviceType": "imported",
       "providerPlugin": "awscloudformation",
       "dependsOn": []
     }
